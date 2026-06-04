@@ -1,0 +1,227 @@
+[
+  {
+    "title": "Junior Software Engineer",
+    "company": "Infosys",
+    "description": "Develop and maintain web applications using Java, Spring Boot, and React. Collaborate with cross-functional teams to deliver high-quality software solutions. Participate in code reviews and agile ceremonies.",
+    "required_skills": ["Java", "Spring Boot", "SQL", "REST APIs", "Git"],
+    "preferred_skills": ["React", "Docker", "AWS", "Microservices"],
+    "experience_range": "0-2 years",
+    "domain": "Software Engineering"
+  },
+  {
+    "title": "Data Analyst",
+    "company": "Deloitte",
+    "description": "Analyze large datasets to extract business insights. Build dashboards and reports using Power BI and Tableau. Work with stakeholders to define KPIs and data-driven strategies.",
+    "required_skills": ["SQL", "Excel", "Python", "Data Visualization", "Statistics"],
+    "preferred_skills": ["Power BI", "Tableau", "R", "Machine Learning basics"],
+    "experience_range": "0-3 years",
+    "domain": "Data Analytics"
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "company": "Amazon",
+    "description": "Design and deploy machine learning models at scale. Work with large datasets, build training pipelines, and optimize model performance. Collaborate with product teams to integrate ML into production systems.",
+    "required_skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow or PyTorch", "SQL"],
+    "preferred_skills": ["AWS SageMaker", "NLP", "Computer Vision", "Docker", "Kubernetes"],
+    "experience_range": "1-4 years",
+    "domain": "Machine Learning"
+  },
+  {
+    "title": "Frontend Developer",
+    "company": "Flipkart",
+    "description": "Build responsive and performant user interfaces for one of India's largest e-commerce platforms. Work with React, TypeScript, and modern CSS frameworks. Optimize for mobile-first experiences.",
+    "required_skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS"],
+    "preferred_skills": ["Next.js", "Redux", "Tailwind CSS", "Performance Optimization", "Testing"],
+    "experience_range": "0-2 years",
+    "domain": "Frontend Development"
+  },
+  {
+    "title": "Backend Developer",
+    "company": "Razorpay",
+    "description": "Build and scale payment processing systems handling millions of transactions. Design RESTful APIs, manage databases, and ensure system reliability. Work with Go, Python, or Java.",
+    "required_skills": ["Python or Go or Java", "REST APIs", "PostgreSQL", "Redis", "System Design"],
+    "preferred_skills": ["Kafka", "Docker", "Kubernetes", "Microservices", "AWS"],
+    "experience_range": "1-3 years",
+    "domain": "Backend Development"
+  },
+  {
+    "title": "DevOps Engineer",
+    "company": "Atlassian",
+    "description": "Automate infrastructure provisioning and deployment pipelines. Manage cloud infrastructure on AWS. Implement monitoring, logging, and alerting systems. Support development teams with CI/CD.",
+    "required_skills": ["AWS", "Docker", "Kubernetes", "CI/CD", "Linux"],
+    "preferred_skills": ["Terraform", "Ansible", "Python", "Prometheus", "Grafana"],
+    "experience_range": "1-3 years",
+    "domain": "DevOps"
+  },
+  {
+    "title": "Full Stack Developer",
+    "company": "TCS Digital",
+    "description": "Develop end-to-end web applications for enterprise clients. Work across frontend (React/Angular) and backend (Node.js/Java). Participate in client-facing discussions and solution design.",
+    "required_skills": ["JavaScript", "React or Angular", "Node.js or Java", "SQL", "REST APIs"],
+    "preferred_skills": ["TypeScript", "MongoDB", "Docker", "Agile", "Cloud platforms"],
+    "experience_range": "0-2 years",
+    "domain": "Full Stack Development"
+  },
+  {
+    "title": "Data Scientist",
+    "company": "Microsoft",
+    "description": "Apply statistical methods and machine learning to solve complex business problems. Build predictive models, conduct A/B tests, and communicate findings to stakeholders. Work with Azure ML and Python.",
+    "required_skills": ["Python", "Machine Learning", "Statistics", "SQL", "Data Visualization"],
+    "preferred_skills": ["Azure ML", "Deep Learning", "NLP", "Spark", "R"],
+    "experience_range": "1-4 years",
+    "domain": "Data Science"
+  },
+  {
+    "title": "Cloud Engineer",
+    "company": "Wipro",
+    "description": "Design and implement cloud solutions on AWS and Azure. Migrate on-premise systems to cloud. Manage infrastructure security, cost optimization, and compliance.",
+    "required_skills": ["AWS or Azure", "Cloud Architecture", "Networking", "Linux", "Security"],
+    "preferred_skills": ["Terraform", "CloudFormation", "Python", "Containers", "Serverless"],
+    "experience_range": "0-3 years",
+    "domain": "Cloud Engineering"
+  },
+  {
+    "title": "AI Research Intern",
+    "company": "Google Research India",
+    "description": "Contribute to cutting-edge AI research projects. Implement and experiment with novel architectures. Write research papers and present findings. Work with JAX/TensorFlow on large-scale models.",
+    "required_skills": ["Python", "Deep Learning", "Linear Algebra", "Research methodology", "PyTorch or TensorFlow"],
+    "preferred_skills": ["JAX", "NLP", "Transformers", "Research publications", "Computer Vision"],
+    "experience_range": "0-1 years",
+    "domain": "AI Research"
+  },
+  {
+    "title": "Product Manager",
+    "company": "Swiggy",
+    "description": "Own product roadmap for consumer-facing features. Analyze user data to identify opportunities. Work with engineering and design teams to ship features. Define success metrics and measure outcomes.",
+    "required_skills": ["Product Thinking", "Data Analysis", "Communication", "SQL", "User Research"],
+    "preferred_skills": ["A/B Testing", "Agile", "Technical Background", "Growth", "Mobile Products"],
+    "experience_range": "1-3 years",
+    "domain": "Product Management"
+  },
+  {
+    "title": "Cybersecurity Analyst",
+    "company": "Tata Consultancy Services",
+    "description": "Monitor and respond to security incidents. Conduct vulnerability assessments and penetration testing. Implement security best practices and compliance frameworks. Analyze logs and threat intelligence.",
+    "required_skills": ["Network Security", "SIEM Tools", "Linux", "Vulnerability Assessment", "Security Frameworks"],
+    "preferred_skills": ["Python", "Ethical Hacking", "Cloud Security", "CISSP", "Incident Response"],
+    "experience_range": "0-2 years",
+    "domain": "Cybersecurity"
+  },
+  {
+    "title": "Mobile App Developer",
+    "company": "Paytm",
+    "description": "Develop and maintain mobile applications for Android and iOS. Implement new features, optimize performance, and fix bugs. Work with cross-platform frameworks and native SDKs.",
+    "required_skills": ["React Native or Flutter", "JavaScript or Dart", "Mobile UI/UX", "REST APIs", "Git"],
+    "preferred_skills": ["Native Android (Kotlin)", "Native iOS (Swift)", "Firebase", "App Store optimization"],
+    "experience_range": "0-2 years",
+    "domain": "Mobile Development"
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Zoho",
+    "description": "Build natural language processing systems for enterprise products. Work on text classification, entity extraction, and conversational AI. Deploy models in production with low-latency requirements.",
+    "required_skills": ["Python", "NLP", "Transformers", "Deep Learning", "Text Processing"],
+    "preferred_skills": ["Hugging Face", "LangChain", "LLMs", "MLOps", "BERT/GPT fine-tuning"],
+    "experience_range": "0-3 years",
+    "domain": "Natural Language Processing"
+  },
+  {
+    "title": "Database Administrator",
+    "company": "Oracle India",
+    "description": "Manage and optimize database systems for enterprise clients. Handle backups, replication, performance tuning, and security. Work with Oracle, PostgreSQL, and MySQL databases.",
+    "required_skills": ["SQL", "Database Design", "Performance Tuning", "Backup/Recovery", "Linux"],
+    "preferred_skills": ["Oracle DB", "PostgreSQL", "MongoDB", "Cloud databases", "Python scripting"],
+    "experience_range": "0-2 years",
+    "domain": "Database Administration"
+  },
+  {
+    "title": "UI/UX Designer",
+    "company": "Freshworks",
+    "description": "Design intuitive user interfaces for SaaS products. Conduct user research, create wireframes and prototypes, and collaborate with developers. Follow design systems and accessibility guidelines.",
+    "required_skills": ["Figma", "UI Design", "UX Research", "Prototyping", "Design Systems"],
+    "preferred_skills": ["HTML/CSS basics", "User Testing", "Accessibility", "Motion Design", "Illustration"],
+    "experience_range": "0-2 years",
+    "domain": "Design"
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "PhonePe",
+    "description": "Build and maintain ML infrastructure and pipelines. Automate model training, evaluation, and deployment. Manage experiment tracking and model registry. Ensure reliability of ML systems in production.",
+    "required_skills": ["Python", "Docker", "Kubernetes", "CI/CD", "ML fundamentals"],
+    "preferred_skills": ["MLflow", "Kubeflow", "AWS SageMaker", "Airflow", "Terraform"],
+    "experience_range": "1-3 years",
+    "domain": "MLOps"
+  },
+  {
+    "title": "Embedded Systems Engineer",
+    "company": "Samsung R&D India",
+    "description": "Design and develop firmware for IoT and consumer electronics devices. Work with C/C++, RTOS, and communication protocols. Debug hardware-software integration issues.",
+    "required_skills": ["C", "C++", "Embedded Systems", "RTOS", "Communication Protocols"],
+    "preferred_skills": ["ARM", "IoT", "Bluetooth/WiFi", "Linux Kernel", "PCB Design basics"],
+    "experience_range": "0-2 years",
+    "domain": "Embedded Systems"
+  },
+  {
+    "title": "Blockchain Developer",
+    "company": "Polygon Labs",
+    "description": "Build decentralized applications and smart contracts. Work with Ethereum, Solidity, and Web3 frameworks. Optimize gas costs and ensure smart contract security.",
+    "required_skills": ["Solidity", "Ethereum", "Web3.js", "JavaScript", "Smart Contracts"],
+    "preferred_skills": ["DeFi", "NFTs", "Rust", "Zero-knowledge proofs", "Hardhat"],
+    "experience_range": "0-2 years",
+    "domain": "Blockchain"
+  },
+  {
+    "title": "Technical Writer",
+    "company": "GitHub",
+    "description": "Write technical documentation for developer tools and APIs. Create tutorials, guides, and reference documentation. Collaborate with engineering teams to understand features and communicate them clearly.",
+    "required_skills": ["Technical Writing", "Markdown", "API Documentation", "English Communication", "Git"],
+    "preferred_skills": ["Developer tools", "Static site generators", "Programming knowledge", "Docs-as-code"],
+    "experience_range": "0-2 years",
+    "domain": "Technical Writing"
+  },
+  {
+    "title": "QA Automation Engineer",
+    "company": "Thoughtworks",
+    "description": "Design and implement automated testing frameworks. Write test scripts for web and API testing. Integrate tests into CI/CD pipelines. Work with development teams in an agile environment.",
+    "required_skills": ["Selenium or Cypress", "Python or Java", "Test Automation", "REST API Testing", "CI/CD"],
+    "preferred_skills": ["Performance Testing", "Docker", "BDD/TDD", "Postman", "Cloud Testing"],
+    "experience_range": "0-2 years",
+    "domain": "Quality Assurance"
+  },
+  {
+    "title": "Computer Vision Engineer",
+    "company": "NVIDIA India",
+    "description": "Develop computer vision models for autonomous systems and edge devices. Work with object detection, segmentation, and tracking. Optimize models for real-time inference on GPUs.",
+    "required_skills": ["Python", "Computer Vision", "Deep Learning", "OpenCV", "PyTorch"],
+    "preferred_skills": ["CUDA", "TensorRT", "ONNX", "3D Vision", "Edge deployment"],
+    "experience_range": "1-3 years",
+    "domain": "Computer Vision"
+  },
+  {
+    "title": "Site Reliability Engineer",
+    "company": "Uber India",
+    "description": "Ensure reliability and uptime of large-scale distributed systems. Build automation tools, manage incident response, and optimize system performance. Work with microservices at massive scale.",
+    "required_skills": ["Linux", "Python or Go", "Distributed Systems", "Monitoring", "Networking"],
+    "preferred_skills": ["Kubernetes", "Prometheus", "Grafana", "Chaos Engineering", "SLO/SLA management"],
+    "experience_range": "1-4 years",
+    "domain": "Site Reliability"
+  },
+  {
+    "title": "GenAI Application Developer",
+    "company": "Accenture AI",
+    "description": "Build enterprise AI applications using LLMs and generative AI. Implement RAG pipelines, prompt engineering, and AI agents. Work with AWS Bedrock, LangChain, and vector databases.",
+    "required_skills": ["Python", "LangChain", "LLMs", "Prompt Engineering", "REST APIs"],
+    "preferred_skills": ["AWS Bedrock", "Vector Databases", "RAG", "LangGraph", "Fine-tuning"],
+    "experience_range": "0-2 years",
+    "domain": "Generative AI"
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Zomato",
+    "description": "Build and maintain data pipelines and ETL processes. Design data warehouse schemas and optimize query performance. Work with big data technologies to process millions of events daily.",
+    "required_skills": ["Python", "SQL", "ETL", "Data Modeling", "Airflow or similar"],
+    "preferred_skills": ["Spark", "Kafka", "AWS Redshift/Glue", "dbt", "Data Quality"],
+    "experience_range": "0-3 years",
+    "domain": "Data Engineering"
+  }
+]
