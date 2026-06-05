@@ -76,9 +76,9 @@ We will deploy the FastAPI backend to an AWS Elastic Beanstalk Python environmen
    eb init -p python-3.12 saransh-api --region us-east-1
    ```
 
-3. **Create the Environment (Free Tier - t2.micro)**:
+3. **Create the Environment (Free Tier - t3.micro)**:
    ```bash
-   eb create saransh-api-env --instance_type t2.micro
+   eb create saransh-api-env --instance_type t3.micro --single -ip aws-elasticbeanstalk-ec2-role
    ```
 
 4. **Configure Environment Variables**:
