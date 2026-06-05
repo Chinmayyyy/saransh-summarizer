@@ -36,3 +36,4 @@ slowapi==0.1.9
 # === Utilities ===
 numpy==1.26.4
 scikit-learn==1.6.1
+mangum==0.17.0

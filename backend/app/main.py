@@ -146,3 +146,8 @@ async def global_exception_handler(request: Request, exc: Exception):
             "detail": "An unexpected error occurred. Please try again.",
         },
     )
+
+
+# --- AWS Lambda Handler ---
+from mangum import Mangum
+handler = Mangum(app)
