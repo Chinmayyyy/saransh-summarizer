@@ -53,12 +53,14 @@ class BedrockEmbeddingService(EmbeddingService):
         import boto3
 
         self.model_id = model_id
-        self.client = boto3.client(
-            "bedrock-runtime",
-            region_name=region,
-            aws_access_key_id=aws_access_key_id,
-            aws_secret_access_key=aws_secret_access_key,
-        )
+        
+        # Build client arguments; omit static credentials if they are empty to allow boto3 to use IAM roles
+        client_kwargs = {"region_name": region}
+        if aws_access_key_id and aws_secret_access_key:
+            client_kwargs["aws_access_key_id"] = aws_access_key_id
+            client_kwargs["aws_secret_access_key"] = aws_secret_access_key
+            
+        self.client = boto3.client("bedrock-runtime", **client_kwargs)
         self._dimension = 1024
         logger.info(f"BedrockEmbeddingService initialized: {model_id}")
 
@@ -144,7 +146,14 @@ def create_embedding_service(
     aws_secret_access_key: str = "",
 ) -> EmbeddingService:
     """Factory: Bedrock first, local fallback if unavailable."""
-    if use_bedrock and aws_access_key_id and aws_secret_access_key:
+    import os
+    is_aws_env = bool(
+        os.environ.get("AWS_LAMBDA_FUNCTION_NAME")
+        or os.environ.get("AWS_EXECUTION_ENV")
+        or os.environ.get("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI")
+    )
+    
+    if use_bedrock and (is_aws_env or (aws_access_key_id and aws_secret_access_key)):
         try:
             service = BedrockEmbeddingService(model_id, region, aws_access_key_id, aws_secret_access_key)
             logger.info(f"Using Bedrock Embeddings: {model_id}")

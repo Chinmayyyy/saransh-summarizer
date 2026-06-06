@@ -54,11 +54,15 @@ class Settings(BaseSettings):
 
     @property
     def bedrock_available(self) -> bool:
-        """Check if Bedrock credentials are configured."""
+        """Check if Bedrock is enabled and credentials are configured (or running in AWS)."""
+        is_aws_env = bool(
+            os.environ.get("AWS_LAMBDA_FUNCTION_NAME")
+            or os.environ.get("AWS_EXECUTION_ENV")
+            or os.environ.get("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI")
+        )
         return bool(
             self.use_bedrock
-            and self.aws_access_key_id
-            and self.aws_secret_access_key
+            and (is_aws_env or (self.aws_access_key_id and self.aws_secret_access_key))
         )
 
     class Config:
