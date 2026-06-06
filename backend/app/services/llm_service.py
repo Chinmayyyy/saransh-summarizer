@@ -176,6 +176,10 @@ def create_llm_service(
     
     if use_bedrock and (is_aws_env or (aws_access_key_id and aws_secret_access_key)):
         try:
+            # If in AWS, do NOT pass static keys to force boto3 to use execution role/default chain
+            if is_aws_env:
+                aws_access_key_id = ""
+                aws_secret_access_key = ""
             service = BedrockLLMService(model_id, region, aws_access_key_id, aws_secret_access_key)
             logger.info(f"Using Bedrock LLM: {model_id}")
             return service
