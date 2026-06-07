@@ -1,9 +1,4 @@
-"""
-Saransh — Profile Extractor Agent Node
-
-LLM-powered agent: extracts structured profile from resume text.
-Identifies name, skills, tools, experience, education, domains, projects.
-"""
+"""Profile extractor agent node using LLM to parse resumes."""
 
 import json
 import logging
@@ -38,12 +33,7 @@ Extract: name, skills, tools, experience_years, education, domains, projects. Re
 
 
 def profile_extractor_node(state: dict, llm: LLMService) -> dict:
-    """
-    Profile Extractor Agent: Parses resume into structured profile.
-
-    Reads: raw_text
-    Writes: profile
-    """
+    """Extracts candidate profile information from resume text using the LLM."""
     raw_text = state.get("raw_text", "")
 
     if not raw_text:

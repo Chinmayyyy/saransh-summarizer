@@ -1,10 +1,4 @@
-"""
-Saransh — Parser Agent Node
-
-Deterministic agent: extracts text from uploaded files.
-Supports PDF, DOCX, TXT, CSV, XLSX, JSON.
-No LLM calls — pure document parsing.
-"""
+"""Document parser node supporting PDF, DOCX, TXT, CSV, XLSX, JSON."""
 
 import io
 import json
@@ -107,12 +101,7 @@ def _clean_text(text: str) -> str:
 
 
 def parser_node(state: dict) -> dict:
-    """
-    Parser Agent: Extracts and cleans text from the uploaded file.
-
-    Reads: file_bytes, filename
-    Writes: raw_text, file_type, word_count, error
-    """
+    """Extracts and cleans text from the uploaded file."""
     filename = state.get("filename", "unknown")
     file_bytes = state.get("file_bytes", b"")
 

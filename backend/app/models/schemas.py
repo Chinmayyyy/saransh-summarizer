@@ -1,16 +1,9 @@
-"""
-Saransh — Pydantic Request/Response Models
-
-All API schemas for summarization and resume matching responses.
-"""
+"""Pydantic Request/Response schemas."""
 
 from pydantic import BaseModel, Field
 from typing import Optional
 
 
-# ============================================
-# Summarize Mode Schemas
-# ============================================
 
 class SummaryResponse(BaseModel):
     """Response from the summarization agent pipeline."""
@@ -24,9 +17,6 @@ class SummaryResponse(BaseModel):
     processing_time_ms: int = Field(description="Total processing time in milliseconds")
 
 
-# ============================================
-# Resume Mode Schemas
-# ============================================
 
 class ResumeProfile(BaseModel):
     """Extracted resume profile from the Profile Extractor agent."""
@@ -58,9 +48,6 @@ class ResumeMatchResponse(BaseModel):
     processing_time_ms: int = Field(description="Total processing time in milliseconds")
 
 
-# ============================================
-# Error Schema
-# ============================================
 
 class ErrorResponse(BaseModel):
     """Standard error response."""

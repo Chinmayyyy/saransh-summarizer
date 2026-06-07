@@ -1,9 +1,4 @@
-"""
-Saransh — Summarizer Agent Node
-
-LLM-powered agent: generates structured summaries from document context.
-Produces short summary, detailed summary, key points, and keywords.
-"""
+"""Summarizer agent node using LLM to generate structured summaries."""
 
 import json
 import logging
@@ -57,12 +52,7 @@ Respond with valid JSON only with: short_summary, detailed_summary, key_points, 
 
 
 def summarizer_node(state: dict, llm: LLMService) -> dict:
-    """
-    Summarizer Agent: Generates structured summaries.
-
-    Reads: relevant_chunks, doc_type, entities, quality_feedback, retry_count
-    Writes: short_summary, detailed_summary, key_points, keywords
-    """
+    """Generates a structured document summary using the LLM."""
     relevant_chunks = state.get("relevant_chunks", [])
     doc_type = state.get("doc_type", "general")
     entities = state.get("entities", [])

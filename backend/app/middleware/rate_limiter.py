@@ -1,9 +1,4 @@
-"""
-Saransh — Rate Limiting Middleware
-
-IP-based rate limiting using slowapi to prevent abuse and control costs.
-Limits: 10 requests/min per IP, 3 file uploads/min per IP.
-"""
+"""Rate limiting middleware using slowapi."""
 
 import logging
 from slowapi import Limiter
@@ -14,7 +9,6 @@ from starlette.responses import JSONResponse
 
 logger = logging.getLogger(__name__)
 
-# Create the limiter instance (keyed by client IP)
 limiter = Limiter(key_func=get_remote_address)
 
 

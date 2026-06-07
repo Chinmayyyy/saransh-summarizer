@@ -1,9 +1,4 @@
-"""
-Saransh — Career Advisor Agent Node
-
-LLM-powered agent: for each top job match, explains why it fits,
-identifies skill gaps, and suggests improvements.
-"""
+"""Career advisor node using LLM to generate match explanations and next steps."""
 
 import json
 import logging
@@ -46,12 +41,7 @@ For each job, explain why it matches, what skills are missing, and what the cand
 
 
 def career_advisor_node(state: dict, llm: LLMService) -> dict:
-    """
-    Career Advisor Agent: Explains matches and provides guidance.
-
-    Reads: profile, top_matches
-    Writes: match_explanations
-    """
+    """Generates career advisor next steps and feedback on job matches using LLM."""
     profile = state.get("profile", {})
     top_matches = state.get("top_matches", [])
 

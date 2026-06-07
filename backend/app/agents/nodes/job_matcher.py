@@ -1,9 +1,4 @@
-"""
-Saransh — Job Matcher Agent Node
-
-Embedding-based agent: matches resume profile against job postings
-using semantic similarity (cosine similarity via FAISS).
-"""
+"""Job matcher node using cosine similarity on candidate and job embeddings."""
 
 import json
 import logging
@@ -77,12 +72,7 @@ def _job_to_text(job: dict) -> str:
 
 
 def job_matcher_node(state: dict, embedding_service: EmbeddingService) -> dict:
-    """
-    Job Matcher Agent: Matches resume against job postings using embeddings.
-
-    Reads: profile
-    Writes: job_postings, match_scores, top_matches
-    """
+    """Matches candidate profile against job postings using embeddings."""
     profile = state.get("profile", {})
 
     # Load job postings

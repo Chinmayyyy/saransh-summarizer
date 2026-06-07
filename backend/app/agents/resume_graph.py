@@ -1,9 +1,4 @@
-"""
-Saransh — Resume Mode Agent Graph
-
-LangGraph StateGraph that orchestrates the resume matching pipeline:
-  Resume Parser → Profile Extractor → Job Matcher → Career Advisor
-"""
+"""LangGraph orchestrator for the resume matching pipeline."""
 
 import logging
 from functools import partial
@@ -22,14 +17,12 @@ logger = logging.getLogger(__name__)
 
 
 def _check_parser_error(state: dict) -> str:
-    """After parser: check for errors."""
     if state.get("error"):
         return "error_exit"
     return "extract_profile"
 
 
 def _check_profile_error(state: dict) -> str:
-    """After profile extraction: check if profile has enough data."""
     profile = state.get("profile", {})
     skills = profile.get("skills", [])
     if not skills:
@@ -38,19 +31,10 @@ def _check_profile_error(state: dict) -> str:
 
 
 def _error_exit_node(state: dict) -> dict:
-    """Terminal node for error states."""
     return {}
 
 
 def build_resume_graph(llm: LLMService, embedding_service: EmbeddingService) -> StateGraph:
-    """
-    Build and compile the Resume mode agent graph.
-
-    Agent flow:
-    START → parser → [error_exit | profile_extractor]
-    profile_extractor → job_matcher → career_advisor → END
-    """
-    # Bind services
     profile_with_llm = partial(profile_extractor_node, llm=llm)
     matcher_with_embeddings = partial(job_matcher_node, embedding_service=embedding_service)
     advisor_with_llm = partial(career_advisor_node, llm=llm)

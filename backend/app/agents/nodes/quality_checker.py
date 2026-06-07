@@ -1,10 +1,4 @@
-"""
-Saransh — Quality Checker Agent Node
-
-LLM-powered agent: validates the generated summary for quality.
-Checks coverage, accuracy, and completeness.
-Max 1 retry if quality fails.
-"""
+"""Quality checker node using LLM to validate summary quality."""
 
 import json
 import logging
@@ -44,12 +38,7 @@ Does this summary adequately cover the source material? Respond with JSON: {{"pa
 
 
 def quality_checker_node(state: dict, llm: LLMService) -> dict:
-    """
-    Quality Checker Agent: Validates summary quality.
-
-    Reads: raw_text, short_summary, key_points, retry_count
-    Writes: quality_pass, quality_feedback, retry_count
-    """
+    """Evaluates summary quality against the source preview."""
     raw_text = state.get("raw_text", "")
     short_summary = state.get("short_summary", "")
     key_points = state.get("key_points", [])

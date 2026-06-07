@@ -1,10 +1,4 @@
-"""
-Saransh — Embedding Service
-
-Abstraction layer for text embeddings. Supports:
-  - Amazon Bedrock Titan Embed Text v2 (primary, $0.02/1M tokens)
-  - Local sentence-transformers fallback (all-MiniLM-L6-v2)
-"""
+"""Embedding Service supporting Amazon Bedrock and local fallback."""
 
 import json
 import logging
@@ -44,10 +38,7 @@ class EmbeddingService(ABC):
 
 
 class BedrockEmbeddingService(EmbeddingService):
-    """
-    Amazon Bedrock Titan Text Embeddings V2.
-    1024-dimensional vectors, up to 8192 tokens per input.
-    """
+    """Amazon Bedrock Titan Text Embeddings V2."""
 
     def __init__(self, model_id: str, region: str, aws_access_key_id: str, aws_secret_access_key: str):
         import boto3
@@ -104,10 +95,7 @@ class BedrockEmbeddingService(EmbeddingService):
 
 
 class LocalEmbeddingService(EmbeddingService):
-    """
-    Local sentence-transformers fallback.
-    Uses all-MiniLM-L6-v2 (384-dim, ~80MB download on first use).
-    """
+    """Local sentence-transformers fallback using all-MiniLM-L6-v2."""
 
     def __init__(self):
         try:

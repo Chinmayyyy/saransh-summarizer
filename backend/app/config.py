@@ -1,9 +1,4 @@
-"""
-Saransh — Application Configuration
-
-Loads settings from environment variables / .env file.
-All Bedrock and rate-limiting settings are centralized here.
-"""
+"""Application configuration settings."""
 
 from pydantic_settings import BaseSettings
 from pydantic import Field
@@ -14,31 +9,27 @@ import os
 class Settings(BaseSettings):
     """Application settings loaded from .env file or environment variables."""
 
-    # --- AWS ---
     aws_access_key_id: str = Field(default="", description="AWS Access Key ID")
     aws_secret_access_key: str = Field(default="", description="AWS Secret Access Key")
     aws_default_region: str = Field(default="us-east-1", description="AWS Region")
 
-    # --- Bedrock Models ---
     bedrock_llm_model_id: str = Field(
         default="amazon.nova-micro-v1:0",
-        description="Bedrock LLM model ID (Nova Micro is cheapest)"
+        description="Bedrock LLM model ID"
     )
     bedrock_embedding_model_id: str = Field(
         default="amazon.titan-embed-text-v2:0",
         description="Bedrock embedding model ID"
     )
 
-    # --- App Settings ---
     use_bedrock: bool = Field(
         default=True,
-        description="Use Bedrock for LLM/embeddings. Falls back to local if False or unavailable."
+        description="Use Bedrock for LLM/embeddings."
     )
     max_file_size_mb: int = Field(default=10, description="Max file upload size in MB")
-    rate_limit_per_minute: int = Field(default=10, description="Max API requests per minute per IP")
-    upload_limit_per_minute: int = Field(default=3, description="Max file uploads per minute per IP")
+    rate_limit_per_minute: int = Field(default=10, description="Max API requests per minute")
+    upload_limit_per_minute: int = Field(default=3, description="Max file uploads per minute")
 
-    # --- CORS ---
     cors_origins: str = Field(
         default="http://localhost:5173,http://localhost:3000",
         description="Comma-separated CORS origins"
@@ -54,7 +45,6 @@ class Settings(BaseSettings):
 
     @property
     def bedrock_available(self) -> bool:
-        """Check if Bedrock is enabled and credentials are configured (or running in AWS)."""
         is_aws_env = bool(
             os.environ.get("AWS_LAMBDA_FUNCTION_NAME")
             or os.environ.get("AWS_EXECUTION_ENV")

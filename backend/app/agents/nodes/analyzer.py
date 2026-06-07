@@ -1,9 +1,4 @@
-"""
-Saransh — Analyzer Agent Node
-
-LLM-powered agent: analyzes document structure, identifies type,
-extracts key entities and metadata.
-"""
+"""Analyzer agent node using LLM to extract document metadata."""
 
 import json
 import logging
@@ -35,12 +30,7 @@ Respond with valid JSON only."""
 
 
 def analyzer_node(state: dict, llm: LLMService) -> dict:
-    """
-    Analyzer Agent: Identifies document type, entities, and metadata.
-
-    Reads: raw_text
-    Writes: doc_type, entities, metadata
-    """
+    """Identifies document type, entities, and metadata."""
     raw_text = state.get("raw_text", "")
 
     if not raw_text:

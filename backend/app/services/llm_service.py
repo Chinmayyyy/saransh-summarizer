@@ -1,12 +1,4 @@
-"""
-Saransh — LLM Service
-
-Abstraction layer for LLM calls. Supports:
-  - Amazon Bedrock Nova Micro (primary, cheapest at $0.035/1M input)
-  - Local extractive fallback (no API needed)
-
-All agent nodes call this service — never boto3 directly.
-"""
+"""LLM Service integration supporting Amazon Bedrock and local fallback."""
 
 import json
 import logging
@@ -39,10 +31,7 @@ class LLMService(ABC):
 
 
 class BedrockLLMService(LLMService):
-    """
-    Amazon Bedrock Nova Micro LLM service.
-    Uses the invoke_model API with the Converse-style message format.
-    """
+    """Amazon Bedrock Nova Micro LLM service."""
 
     def __init__(self, model_id: str, region: str, aws_access_key_id: str, aws_secret_access_key: str):
         import boto3
@@ -102,11 +91,7 @@ class BedrockLLMService(LLMService):
 
 
 class LocalFallbackLLM(LLMService):
-    """
-    Local extractive summarization fallback.
-    Uses TF-IDF sentence scoring — no API calls, no GPU.
-    Works offline for development and testing.
-    """
+    """Local extractive summarization fallback using TF-IDF."""
 
     def generate(
         self,

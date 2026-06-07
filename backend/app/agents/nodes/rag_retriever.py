@@ -1,10 +1,4 @@
-"""
-Saransh — RAG Retriever Agent Node
-
-Deterministic agent: chunks text, embeds chunks, stores in FAISS,
-retrieves the most relevant chunks for summarization.
-Only used for long documents (≥ 2000 tokens).
-"""
+"""RAG retrieval agent node using FAISS and local/Bedrock embeddings."""
 
 import logging
 import re
@@ -68,12 +62,7 @@ def _chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OV
 
 
 def rag_retriever_node(state: dict, embedding_service: EmbeddingService) -> dict:
-    """
-    RAG Retriever Agent: Chunks, embeds, and retrieves relevant context.
-
-    Reads: raw_text
-    Writes: chunks, relevant_chunks, used_rag
-    """
+    """Retrieves relevant chunks of text using vector embeddings and FAISS."""
     raw_text = state.get("raw_text", "")
     word_count = state.get("word_count", 0)
 

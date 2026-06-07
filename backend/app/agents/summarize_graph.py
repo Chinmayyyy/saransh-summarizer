@@ -1,13 +1,4 @@
-"""
-Saransh — Summarize Mode Agent Graph
-
-LangGraph StateGraph that orchestrates the multi-agent summarization pipeline:
-  Parser → Analyzer → [RAG Retriever] → Summarizer → Quality Checker
-
-The supervisor logic is encoded as conditional edges:
-  - After analysis: choose direct summarization vs RAG based on document length
-  - After quality check: pass (return) or retry (max 1 retry with feedback)
-"""
+"""LangGraph orchestrator for the summarization pipeline."""
 
 import logging
 from functools import partial
@@ -30,14 +21,12 @@ SHORT_DOC_THRESHOLD = 2000
 
 
 def _check_parser_error(state: dict) -> str:
-    """After parser: check for errors before continuing."""
     if state.get("error"):
         return "error_exit"
     return "analyze"
 
 
 def _route_after_analysis(state: dict) -> str:
-    """Supervisor decision: use RAG for long docs, skip for short ones."""
     word_count = state.get("word_count", 0)
     if word_count >= SHORT_DOC_THRESHOLD:
         logger.info(f"Supervisor: Long doc ({word_count} words) → RAG path")
@@ -48,7 +37,6 @@ def _route_after_analysis(state: dict) -> str:
 
 
 def _route_after_quality(state: dict) -> str:
-    """Supervisor decision: pass or retry summarization."""
     if state.get("quality_pass", True):
         return "finish"
     else:
@@ -57,29 +45,17 @@ def _route_after_quality(state: dict) -> str:
 
 
 def _error_exit_node(state: dict) -> dict:
-    """Terminal node for error states — passes through with error."""
     return {}
 
 
 def build_summarize_graph(llm: LLMService, embedding_service: EmbeddingService) -> StateGraph:
-    """
-    Build and compile the Summarize mode agent graph.
-
-    Agent flow:
-    START → parser → [error_exit | analyzer]
-    analyzer → [rag_retriever → summarizer | summarizer]
-    summarizer → quality_checker → [END | summarizer (retry)]
-    """
-    # Bind services to agent nodes using partial
     analyzer_with_llm = partial(analyzer_node, llm=llm)
     rag_with_embeddings = partial(rag_retriever_node, embedding_service=embedding_service)
     summarizer_with_llm = partial(summarizer_node, llm=llm)
     quality_with_llm = partial(quality_checker_node, llm=llm)
 
-    # Build the graph
     graph = StateGraph(SummarizeState)
 
-    # Add nodes
     graph.add_node("parser", parser_node)
     graph.add_node("analyzer", analyzer_with_llm)
     graph.add_node("rag_retriever", rag_with_embeddings)
@@ -87,7 +63,6 @@ def build_summarize_graph(llm: LLMService, embedding_service: EmbeddingService) 
     graph.add_node("quality_checker", quality_with_llm)
     graph.add_node("error_exit", _error_exit_node)
 
-    # Set entry point
     graph.set_entry_point("parser")
 
     # Edges

@@ -1,9 +1,4 @@
-"""
-Saransh — FAISS Vector Store
-
-In-memory FAISS index for per-request RAG retrieval.
-Created fresh for each document — no persistence needed.
-"""
+"""FAISS Vector Store wrapper."""
 
 import logging
 from typing import Optional
@@ -14,11 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 class VectorStore:
-    """
-    Lightweight FAISS wrapper for document chunk retrieval.
-    Each request creates a new VectorStore, indexes the chunks,
-    and retrieves the most relevant ones for summarization.
-    """
+    """Lightweight FAISS wrapper for document chunk retrieval."""
 
     def __init__(self, dimension: int):
         """Initialize an empty FAISS index with the given dimension."""
